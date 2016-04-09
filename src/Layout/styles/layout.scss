@@ -35,7 +35,6 @@
 
 .nav_main_title,
 .nav_main_item {
-    line-height: 32px;
     position: relative;
     display: block;
     text-decoration: none;
@@ -48,6 +47,7 @@
     height: 100px;
     padding-top: 25px;
     margin: -100px 0 0 0;
+    line-height: 1.2;
 }
 
 .nav_main_item {
