@@ -15,7 +15,7 @@ class Layout extends Component {
             <div className={css["wrapper"]}>
                 <div className={css["nav"]}>
                     <aside className={css["nav_main"]}>
-                        <IndexLink to="/" className={cx(css["nav_main_title"])} activeClassName={cx(css["-active"])}>
+                        <IndexLink to="/billing-ux-starter" className={cx(css["nav_main_title"])} activeClassName={cx(css["-active"])}>
                             Billing<br />
                             UX Starter
                         </IndexLink>
@@ -23,7 +23,9 @@ class Layout extends Component {
                         <div className={css["nav_main_list"]}>
                             <div className={css.block}>
                                 {(links || []).map(link => (
-                                    <Link to={`/${link.to}`} className={css["nav_main_item"]}
+                                    <Link key={link.to}
+                                          to={link.to}
+                                          className={css["nav_main_item"]}
                                           activeClassName={cx(css["-active"])}>
                                         {link.text}
                                     </Link>

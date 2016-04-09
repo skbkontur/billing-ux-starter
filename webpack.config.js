@@ -21,7 +21,7 @@ const baseConfig = {
 
     output: {
         path: path.join(__dirname, "dist"),
-        publicPath: "/dist/",
+        publicPath: "/billing-ux-starter/dist/",
         filename: "[name].js",
         chunkFilename: "chunks/[name].[chunkhash].js"
     },
