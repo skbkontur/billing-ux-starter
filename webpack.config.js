@@ -16,7 +16,7 @@ const baseConfig = {
     context: path.join(__dirname, "src"),
 
     entry: {
-        vendors: ["babel-polyfill", "react", "react-dom", "react-router", "classnames", "axios"]
+        vendors: ["babel-polyfill", "react", "react-dom", "react-router", "classnames", "axios", "normalize.css"]
     },
 
     output: {
@@ -88,7 +88,10 @@ const baseConfig = {
     resolve: {
         extensions: ["", ".js", ".jsx"],
         modulesDirectories: ["node_modules", __dirname],
-        root: [__dirname]
+        root: [__dirname],
+        alias: {
+            "normalize.css": "normalize.css/normalize.css"
+        }
     },
 
     postcss: function (webpack) {
