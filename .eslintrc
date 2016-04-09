@@ -1,0 +1,20 @@
+{
+    "ecmaFeatures": {
+        "jsx": true,
+        "modules": true
+    },
+    "env": {
+        "browser": true,
+        "node": true,
+        "commonjs": true
+    },
+    "parser": "babel-eslint",
+    "rules": {
+        "quotes": [ "error", "double" ]
+    },
+    "plugins": [
+        "react"
+    ],
+    "extends": "eslint:recommended",
+    "root": false
+}
