@@ -1,16 +1,42 @@
+import { Component } from "react";
 import { Link, IndexLink } from "react-router";
-import css from "./layout.less";
+import cx from "classnames";
 
-const Layout = ({ children }) => (
-    <div className={css.block}>
-        <IndexLink to="/retail-ui" activeClassName="-active">
-            retail-ui
-        </IndexLink>
-        <Link to="/billing-ui" activeClassName="-active">
-            billing-ui
-        </Link>
-        {children}
-    </div>
-);
+import "./base.scss";
+import css from "./layout.scss";
+import links from "./navigationLinks";
+
+class Layout extends Component {
+    render () {
+        const { children } = this.props;
+
+        return (
+            <div className={css["wrapper"]}>
+                <div className={css["nav"]}>
+                    <aside className={css["nav_main"]}>
+                        <IndexLink to="/" className={cx(css["nav_main_title"])} activeClassName={cx(css["-active"])}>
+                            Billing<br />
+                            UX starter
+                        </IndexLink>
+
+                        <div className={css["nav_main_list"]}>
+                            <div className={css.block}>
+                                {(links || []).map(link => (
+                                    <Link to={`/${link.to}`} className={css["nav_main_item"]}
+                                          activeClassName={cx(css["-active"])}>
+                                        {link.text}
+                                    </Link>
+                                ))}
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+                <div className={css["container"]}>
+                    {children}
+                </div>
+            </div>
+        );
+    }
+}
 
 export default Layout;

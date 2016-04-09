@@ -1,0 +1,25 @@
+html,
+body {
+    height: 100%
+}
+
+body {
+    background: #fff;
+    color: #404040;
+    font: 14px 'Segoe-UI', Arial, Tahoma, sans-serif;
+    line-height: 20px;
+    overflow: auto;
+    overflow-y: scroll;
+    -webkit-font-smoothing: antialiased;
+
+    & * {
+        box-sizing: border-box
+    }
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-weight: 600
+}
